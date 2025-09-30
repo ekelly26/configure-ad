@@ -53,14 +53,32 @@ the output for the DNS should show DC-1's IP Address<br />
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+Install Active Directory
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
+Log into DC-1 and install Active Directory Domain Services
+Promote as DC: Setup a new forest as mydomain.com (Can be anything just remember what was named)
+Restart and then log back into DC-1 as user: mydomain.com\labuser
+
+Create a Domain Admin user within the domain
+
+In Active Directory Users and Computers (ADUC), create an Organizational Unit (OU) called "_EMPLOYEES" Create a new OU named "ADMINS"
+Create a new employee "Jane Doe" (same password) with username (jane_admin)
+Add jane_adminto the "Domain Admins" Security Group
+Log out/close the connection to DC-1 and log back in as "mydomain.com\jane_admin"
+User jane_admin as admin account from now on
+
+Join Client-1 to domain (mydomain.com)
+
+Login to Client-1 as the original local admin and join it to the domain (computer will restart)
+Login to the Domain Controller and verify Client-1 shows up in ADUC
+Create a new OU named "_CLIENTS" and drag Client-1 into there
+
+Setup Remote Desktop for non-administrative users on Client-1
+
+Log into Client-1 as mydomain.com\jane_admin
+Open system properties
+Click "Remote Desktop"
+Allow "domain users" access to remote desktop
+Log into Client-1 as a normal, non-administrative user now
+This previous step would most likely be done with Group Policy which allows admin to change many systems at once
 <br />
