@@ -92,9 +92,9 @@ Create a new OU named "_CLIENTS" and drag Client-1 into there
 Setup Remote Desktop for non-administrative users on Client-1
 
 Log into Client-1 as mydomain.com\jane_admin
+
+<img width="1280" height="987" alt="image" src="https://github.com/user-attachments/assets/9f3fabe1-03c9-4977-9bb3-0ed782a938ab" />
+
 Open system properties
 Click "Remote Desktop"
 Allow "domain users" access to remote desktop
-Log into Client-1 as a normal, non-administrative user now
-This previous step would most likely be done with Group Policy which allows admin to change many systems at once
-<br />
