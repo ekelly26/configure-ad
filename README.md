@@ -30,17 +30,19 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 Setup Domain Controller in Azure<p>
 
+Create a research group with a virtual network and subnet.
 <img width="1902" height="826" alt="image" src="https://github.com/user-attachments/assets/335118af-5bf1-4bb4-9855-190181d1d77e" />
 
+Create the Domain Controller VM (Windows Server 2022) named DC-1 with a username and password. Set Domain Controller's NIC Private IP address to be static.
 <img width="951" height="917" alt="image" src="https://github.com/user-attachments/assets/7741f8a8-d3c0-4c85-a0b6-474cad4246e7" />
 
+Log into the VM and disable the Windows Firewall with command wf.msc (right click windows icon and press run)
 <img width="1377" height="1016" alt="image" src="https://github.com/user-attachments/assets/1d761a29-8dd8-459f-94b5-1bdf47477f31" />
 
 
-Create a research group with a virtual network and subnet.
-Create the Domain Controller VM (Windows Server 2022) named DC-1 with a username and password.
-Set Domain Controller's NIC Private IP address to be static
-Log into the VM and disable the Windows Firewall with command wf.msc (right click windows icon and press run)
+
+
+
 
 Setup Client-1 in Azure
 
